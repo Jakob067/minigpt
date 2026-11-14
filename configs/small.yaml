@@ -1,15 +1,31 @@
 model:
+  vocab_size: 65
+  block_size: 256
   n_layer: 6
   n_head: 6
   n_embd: 384
-  block_size: 256
   dropout: 0.2
+  bias: true
+  positional_embeddings: true
+  attention: manual
+  mlp_ratio: 4
+  init_std: 0.02
 train:
   batch_size: 16
-  max_iters: 1000
+  max_iters: 5000
   learning_rate: 0.001
   min_lr: 0.0001
-  warmup_iters: 50
-  eval_interval: 100
-  eval_batches: 10
+  warmup_iters: 100
+  weight_decay: 0.1
+  beta1: 0.9
+  beta2: 0.95
+  grad_clip: 1.0
+  eval_interval: 250
+  eval_batches: 20
+  seed: 1337
+  device: auto
+  precision: float32
+  num_threads: 4
+  data_path: data/input.txt
+  train_fraction: 0.9
   out_dir: runs/small
