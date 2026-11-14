@@ -1,0 +1,8 @@
+base_config: configs/small.yaml
+seeds: [1337, 2024]
+token_budget: 1048576
+warmup_fraction: 0.05
+evaluations: 4
+eval_batches: 10
+out_dir: runs/ablations
+report_dir: reports
