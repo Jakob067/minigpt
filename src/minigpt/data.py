@@ -14,6 +14,8 @@ SHAKESPEARE_URL = (
     "https://raw.githubusercontent.com/karpathy/char-rnn/master/data/tinyshakespeare/input.txt"
 )
 
+SHAKESPEARE_SHA256 = "86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed"
+
 
 @dataclass
 class Corpus:
@@ -32,6 +34,8 @@ def download_shakespeare(path: str | Path) -> Path:
         destination.parent.mkdir(parents=True, exist_ok=True)
         with urllib.request.urlopen(SHAKESPEARE_URL, timeout=60) as response:
             content = response.read()
+        if hashlib.sha256(content).hexdigest() != SHAKESPEARE_SHA256:
+            raise ValueError("tiny Shakespeare download checksum mismatch")
         content.decode("utf-8")
         temporary = destination.with_suffix(".download")
         temporary.write_bytes(content)
