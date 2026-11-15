@@ -1,0 +1,1354 @@
+{
+  "plan": {
+    "base_config": "configs/small.yaml",
+    "seeds": [
+      1337,
+      2024
+    ],
+    "token_budget": 1048576,
+    "warmup_fraction": 0.05,
+    "evaluations": 4,
+    "eval_batches": 10,
+    "out_dir": "runs/ablations",
+    "report_dir": "reports"
+  },
+  "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07",
+  "seconds": 285.535896166999,
+  "runs": [
+    {
+      "variant": "baseline",
+      "seed": 1337,
+      "steps": 256,
+      "training_tokens": 1048576,
+      "loss": 2.427328774035963,
+      "perplexity": 11.328580428563946,
+      "bits_per_char": 3.501895184908771,
+      "config": {
+        "model": {
+          "vocab_size": 65,
+          "block_size": 256,
+          "n_layer": 6,
+          "n_head": 6,
+          "n_embd": 384,
+          "dropout": 0.2,
+          "bias": true,
+          "positional_embeddings": true,
+          "attention": "manual",
+          "mlp_ratio": 4,
+          "init_std": 0.02
+        },
+        "train": {
+          "batch_size": 16,
+          "max_iters": 256,
+          "learning_rate": 0.001,
+          "min_lr": 0.0001,
+          "warmup_iters": 12,
+          "weight_decay": 0.1,
+          "beta1": 0.9,
+          "beta2": 0.95,
+          "grad_clip": 1.0,
+          "eval_interval": 64,
+          "eval_batches": 10,
+          "seed": 1337,
+          "device": "auto",
+          "precision": "float32",
+          "num_threads": 4,
+          "data_path": "data/input.txt",
+          "train_fraction": 0.9,
+          "out_dir": "runs/ablations/baseline/seed_1337"
+        }
+      },
+      "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07",
+      "environment": {
+        "platform": "macOS-26.7.2-arm64-arm-64bit",
+        "machine": "arm64",
+        "python": "3.11.18",
+        "torch": "2.15.0",
+        "numpy": "2.4.6",
+        "device": "mps",
+        "num_threads": 4
+      },
+      "data_sha256": "86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed",
+      "training_seconds": 29.59646579100081,
+      "history": [
+        {
+          "step": 0,
+          "train_loss": 4.273248338699341,
+          "val_loss": 4.269939851760864,
+          "lr": 8.333333333333333e-05,
+          "tokens_per_second": 0.0,
+          "elapsed_seconds": 0.6131820000009611,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 64,
+          "train_loss": 2.5312755584716795,
+          "val_loss": 2.5352543592453003,
+          "lr": 0.0009056767012834417,
+          "tokens_per_second": 41260.2800172332,
+          "elapsed_seconds": 7.55607837500429,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 128,
+          "train_loss": 2.4844103336334227,
+          "val_loss": 2.5164812564849854,
+          "lr": 0.000587770975448608,
+          "tokens_per_second": 45170.40782070908,
+          "elapsed_seconds": 14.189632082998287,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 192,
+          "train_loss": 2.436557102203369,
+          "val_loss": 2.462552380561829,
+          "lr": 0.0002454486405808321,
+          "tokens_per_second": 33180.83596103355,
+          "elapsed_seconds": 22.882142082999053,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 256,
+          "train_loss": 2.413178062438965,
+          "val_loss": 2.4498925685882567,
+          "lr": 0.0001,
+          "tokens_per_second": 46863.790488785606,
+          "elapsed_seconds": 29.59646579100081,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        }
+      ]
+    },
+    {
+      "variant": "baseline",
+      "seed": 2024,
+      "steps": 256,
+      "training_tokens": 1048576,
+      "loss": 2.427879787611249,
+      "perplexity": 11.33482435025363,
+      "bits_per_char": 3.502690129461299,
+      "config": {
+        "model": {
+          "vocab_size": 65,
+          "block_size": 256,
+          "n_layer": 6,
+          "n_head": 6,
+          "n_embd": 384,
+          "dropout": 0.2,
+          "bias": true,
+          "positional_embeddings": true,
+          "attention": "manual",
+          "mlp_ratio": 4,
+          "init_std": 0.02
+        },
+        "train": {
+          "batch_size": 16,
+          "max_iters": 256,
+          "learning_rate": 0.001,
+          "min_lr": 0.0001,
+          "warmup_iters": 12,
+          "weight_decay": 0.1,
+          "beta1": 0.9,
+          "beta2": 0.95,
+          "grad_clip": 1.0,
+          "eval_interval": 64,
+          "eval_batches": 10,
+          "seed": 2024,
+          "device": "auto",
+          "precision": "float32",
+          "num_threads": 4,
+          "data_path": "data/input.txt",
+          "train_fraction": 0.9,
+          "out_dir": "runs/ablations/baseline/seed_2024"
+        }
+      },
+      "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07",
+      "environment": {
+        "platform": "macOS-26.7.2-arm64-arm-64bit",
+        "machine": "arm64",
+        "python": "3.11.18",
+        "torch": "2.15.0",
+        "numpy": "2.4.6",
+        "device": "mps",
+        "num_threads": 4
+      },
+      "data_sha256": "86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed",
+      "training_seconds": 26.676739624999755,
+      "history": [
+        {
+          "step": 0,
+          "train_loss": 4.169371891021728,
+          "val_loss": 4.173888206481934,
+          "lr": 8.333333333333333e-05,
+          "tokens_per_second": 0.0,
+          "elapsed_seconds": 0.4622135830068146,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 64,
+          "train_loss": 2.524482488632202,
+          "val_loss": 2.5622943162918093,
+          "lr": 0.0009056767012834417,
+          "tokens_per_second": 44659.10493970162,
+          "elapsed_seconds": 6.903041000005032,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 128,
+          "train_loss": 2.4704226732254027,
+          "val_loss": 2.510038733482361,
+          "lr": 0.000587770975448608,
+          "tokens_per_second": 44617.445369386114,
+          "elapsed_seconds": 13.623160875002213,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 192,
+          "train_loss": 2.4196987628936766,
+          "val_loss": 2.461191010475159,
+          "lr": 0.0002454486405808321,
+          "tokens_per_second": 47082.60793098154,
+          "elapsed_seconds": 20.317237833005493,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 256,
+          "train_loss": 2.3975350618362428,
+          "val_loss": 2.439517641067505,
+          "lr": 0.0001,
+          "tokens_per_second": 48366.65512823931,
+          "elapsed_seconds": 26.676739624999755,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        }
+      ]
+    },
+    {
+      "variant": "layers_2",
+      "seed": 1337,
+      "steps": 256,
+      "training_tokens": 1048576,
+      "loss": 2.435580268435571,
+      "perplexity": 11.422444874922782,
+      "bits_per_char": 3.5137995749590085,
+      "config": {
+        "model": {
+          "vocab_size": 65,
+          "block_size": 256,
+          "n_layer": 2,
+          "n_head": 6,
+          "n_embd": 384,
+          "dropout": 0.2,
+          "bias": true,
+          "positional_embeddings": true,
+          "attention": "manual",
+          "mlp_ratio": 4,
+          "init_std": 0.02
+        },
+        "train": {
+          "batch_size": 16,
+          "max_iters": 256,
+          "learning_rate": 0.001,
+          "min_lr": 0.0001,
+          "warmup_iters": 12,
+          "weight_decay": 0.1,
+          "beta1": 0.9,
+          "beta2": 0.95,
+          "grad_clip": 1.0,
+          "eval_interval": 64,
+          "eval_batches": 10,
+          "seed": 1337,
+          "device": "auto",
+          "precision": "float32",
+          "num_threads": 4,
+          "data_path": "data/input.txt",
+          "train_fraction": 0.9,
+          "out_dir": "runs/ablations/layers_2/seed_1337"
+        }
+      },
+      "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07",
+      "environment": {
+        "platform": "macOS-26.7.2-arm64-arm-64bit",
+        "machine": "arm64",
+        "python": "3.11.18",
+        "torch": "2.15.0",
+        "numpy": "2.4.6",
+        "device": "mps",
+        "num_threads": 4
+      },
+      "data_sha256": "86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed",
+      "training_seconds": 9.088864500001364,
+      "history": [
+        {
+          "step": 0,
+          "train_loss": 4.305044889450073,
+          "val_loss": 4.300618648529053,
+          "lr": 8.333333333333333e-05,
+          "tokens_per_second": 0.0,
+          "elapsed_seconds": 0.16943650000030175,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 64,
+          "train_loss": 2.514500641822815,
+          "val_loss": 2.5248483419418335,
+          "lr": 0.0009056767012834417,
+          "tokens_per_second": 163892.6718274779,
+          "elapsed_seconds": 1.9776712500024587,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 128,
+          "train_loss": 2.4742423057556153,
+          "val_loss": 2.5188092231750487,
+          "lr": 0.000587770975448608,
+          "tokens_per_second": 102326.29476961464,
+          "elapsed_seconds": 4.827670250000665,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 192,
+          "train_loss": 2.4319097995758057,
+          "val_loss": 2.4645704507827757,
+          "lr": 0.0002454486405808321,
+          "tokens_per_second": 134249.9737696759,
+          "elapsed_seconds": 7.140830999996979,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 256,
+          "train_loss": 2.409320068359375,
+          "val_loss": 2.4560022354125977,
+          "lr": 0.0001,
+          "tokens_per_second": 163943.96773125336,
+          "elapsed_seconds": 9.088864500001364,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        }
+      ]
+    },
+    {
+      "variant": "layers_2",
+      "seed": 2024,
+      "steps": 256,
+      "training_tokens": 1048576,
+      "loss": 2.436850534477956,
+      "perplexity": 11.43696363816211,
+      "bits_per_char": 3.515632181478967,
+      "config": {
+        "model": {
+          "vocab_size": 65,
+          "block_size": 256,
+          "n_layer": 2,
+          "n_head": 6,
+          "n_embd": 384,
+          "dropout": 0.2,
+          "bias": true,
+          "positional_embeddings": true,
+          "attention": "manual",
+          "mlp_ratio": 4,
+          "init_std": 0.02
+        },
+        "train": {
+          "batch_size": 16,
+          "max_iters": 256,
+          "learning_rate": 0.001,
+          "min_lr": 0.0001,
+          "warmup_iters": 12,
+          "weight_decay": 0.1,
+          "beta1": 0.9,
+          "beta2": 0.95,
+          "grad_clip": 1.0,
+          "eval_interval": 64,
+          "eval_batches": 10,
+          "seed": 2024,
+          "device": "auto",
+          "precision": "float32",
+          "num_threads": 4,
+          "data_path": "data/input.txt",
+          "train_fraction": 0.9,
+          "out_dir": "runs/ablations/layers_2/seed_2024"
+        }
+      },
+      "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07",
+      "environment": {
+        "platform": "macOS-26.7.2-arm64-arm-64bit",
+        "machine": "arm64",
+        "python": "3.11.18",
+        "torch": "2.15.0",
+        "numpy": "2.4.6",
+        "device": "mps",
+        "num_threads": 4
+      },
+      "data_sha256": "86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed",
+      "training_seconds": 9.865694291998807,
+      "history": [
+        {
+          "step": 0,
+          "train_loss": 4.257856845855713,
+          "val_loss": 4.256680202484131,
+          "lr": 8.333333333333333e-05,
+          "tokens_per_second": 0.0,
+          "elapsed_seconds": 0.17799874999764143,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 64,
+          "train_loss": 2.502625918388367,
+          "val_loss": 2.5495079278945925,
+          "lr": 0.0009056767012834417,
+          "tokens_per_second": 104060.10417364817,
+          "elapsed_seconds": 2.904420166996715,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 128,
+          "train_loss": 2.4552409410476685,
+          "val_loss": 2.503018689155579,
+          "lr": 0.000587770975448608,
+          "tokens_per_second": 134729.7153351593,
+          "elapsed_seconds": 5.136206208000658,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 192,
+          "train_loss": 2.4134392023086546,
+          "val_loss": 2.464553427696228,
+          "lr": 0.0002454486405808321,
+          "tokens_per_second": 163922.06768599,
+          "elapsed_seconds": 7.020837332995143,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 256,
+          "train_loss": 2.397986817359924,
+          "val_loss": 2.451316404342651,
+          "lr": 0.0001,
+          "tokens_per_second": 102480.08758798952,
+          "elapsed_seconds": 9.865694291998807,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        }
+      ]
+    },
+    {
+      "variant": "layers_4",
+      "seed": 1337,
+      "steps": 256,
+      "training_tokens": 1048576,
+      "loss": 2.4222050015638796,
+      "perplexity": 11.270683811226839,
+      "bits_per_char": 3.4945031437726533,
+      "config": {
+        "model": {
+          "vocab_size": 65,
+          "block_size": 256,
+          "n_layer": 4,
+          "n_head": 6,
+          "n_embd": 384,
+          "dropout": 0.2,
+          "bias": true,
+          "positional_embeddings": true,
+          "attention": "manual",
+          "mlp_ratio": 4,
+          "init_std": 0.02
+        },
+        "train": {
+          "batch_size": 16,
+          "max_iters": 256,
+          "learning_rate": 0.001,
+          "min_lr": 0.0001,
+          "warmup_iters": 12,
+          "weight_decay": 0.1,
+          "beta1": 0.9,
+          "beta2": 0.95,
+          "grad_clip": 1.0,
+          "eval_interval": 64,
+          "eval_batches": 10,
+          "seed": 1337,
+          "device": "auto",
+          "precision": "float32",
+          "num_threads": 4,
+          "data_path": "data/input.txt",
+          "train_fraction": 0.9,
+          "out_dir": "runs/ablations/layers_4/seed_1337"
+        }
+      },
+      "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07",
+      "environment": {
+        "platform": "macOS-26.7.2-arm64-arm-64bit",
+        "machine": "arm64",
+        "python": "3.11.18",
+        "torch": "2.15.0",
+        "numpy": "2.4.6",
+        "device": "mps",
+        "num_threads": 4
+      },
+      "data_sha256": "86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed",
+      "training_seconds": 17.204024916994967,
+      "history": [
+        {
+          "step": 0,
+          "train_loss": 4.236306619644165,
+          "val_loss": 4.236150646209717,
+          "lr": 8.333333333333333e-05,
+          "tokens_per_second": 0.0,
+          "elapsed_seconds": 0.3186483749959734,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 64,
+          "train_loss": 2.5276385068893434,
+          "val_loss": 2.5344510316848754,
+          "lr": 0.0009056767012834417,
+          "tokens_per_second": 77319.61290495876,
+          "elapsed_seconds": 4.1013354169990635,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 128,
+          "train_loss": 2.474757361412048,
+          "val_loss": 2.505418801307678,
+          "lr": 0.000587770975448608,
+          "tokens_per_second": 62971.7503089126,
+          "elapsed_seconds": 8.835890624999593,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 192,
+          "train_loss": 2.431072306632996,
+          "val_loss": 2.4589486598968504,
+          "lr": 0.0002454486405808321,
+          "tokens_per_second": 83259.47915111638,
+          "elapsed_seconds": 12.654126749999705,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 256,
+          "train_loss": 2.4081754207611086,
+          "val_loss": 2.445472002029419,
+          "lr": 0.0001,
+          "tokens_per_second": 65913.7275304498,
+          "elapsed_seconds": 17.204024916994967,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        }
+      ]
+    },
+    {
+      "variant": "layers_4",
+      "seed": 2024,
+      "steps": 256,
+      "training_tokens": 1048576,
+      "loss": 2.429601399383533,
+      "perplexity": 11.354355324845622,
+      "bits_per_char": 3.5051738902275087,
+      "config": {
+        "model": {
+          "vocab_size": 65,
+          "block_size": 256,
+          "n_layer": 4,
+          "n_head": 6,
+          "n_embd": 384,
+          "dropout": 0.2,
+          "bias": true,
+          "positional_embeddings": true,
+          "attention": "manual",
+          "mlp_ratio": 4,
+          "init_std": 0.02
+        },
+        "train": {
+          "batch_size": 16,
+          "max_iters": 256,
+          "learning_rate": 0.001,
+          "min_lr": 0.0001,
+          "warmup_iters": 12,
+          "weight_decay": 0.1,
+          "beta1": 0.9,
+          "beta2": 0.95,
+          "grad_clip": 1.0,
+          "eval_interval": 64,
+          "eval_batches": 10,
+          "seed": 2024,
+          "device": "auto",
+          "precision": "float32",
+          "num_threads": 4,
+          "data_path": "data/input.txt",
+          "train_fraction": 0.9,
+          "out_dir": "runs/ablations/layers_4/seed_2024"
+        }
+      },
+      "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07",
+      "environment": {
+        "platform": "macOS-26.7.2-arm64-arm-64bit",
+        "machine": "arm64",
+        "python": "3.11.18",
+        "torch": "2.15.0",
+        "numpy": "2.4.6",
+        "device": "mps",
+        "num_threads": 4
+      },
+      "data_sha256": "86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed",
+      "training_seconds": 19.60018795799988,
+      "history": [
+        {
+          "step": 0,
+          "train_loss": 4.226863002777099,
+          "val_loss": 4.217536973953247,
+          "lr": 8.333333333333333e-05,
+          "tokens_per_second": 0.0,
+          "elapsed_seconds": 0.3225989160055178,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 64,
+          "train_loss": 2.5154685497283937,
+          "val_loss": 2.5761048078536986,
+          "lr": 0.0009056767012834417,
+          "tokens_per_second": 59940.73814082345,
+          "elapsed_seconds": 5.091016625003249,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 128,
+          "train_loss": 2.4571273803710936,
+          "val_loss": 2.496762681007385,
+          "lr": 0.000587770975448608,
+          "tokens_per_second": 83409.32675468303,
+          "elapsed_seconds": 8.897789082999225,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 192,
+          "train_loss": 2.4150969266891478,
+          "val_loss": 2.458158826828003,
+          "lr": 0.0002454486405808321,
+          "tokens_per_second": 48880.49785115375,
+          "elapsed_seconds": 14.978226582999923,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 256,
+          "train_loss": 2.3941056966781615,
+          "val_loss": 2.4436612129211426,
+          "lr": 0.0001,
+          "tokens_per_second": 64263.83578965552,
+          "elapsed_seconds": 19.60018795799988,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        }
+      ]
+    },
+    {
+      "variant": "context_64",
+      "seed": 1337,
+      "steps": 1024,
+      "training_tokens": 1048576,
+      "loss": 1.9296206562191112,
+      "perplexity": 6.886897244361236,
+      "bits_per_char": 2.7838541515242192,
+      "config": {
+        "model": {
+          "vocab_size": 65,
+          "block_size": 64,
+          "n_layer": 6,
+          "n_head": 6,
+          "n_embd": 384,
+          "dropout": 0.2,
+          "bias": true,
+          "positional_embeddings": true,
+          "attention": "manual",
+          "mlp_ratio": 4,
+          "init_std": 0.02
+        },
+        "train": {
+          "batch_size": 16,
+          "max_iters": 1024,
+          "learning_rate": 0.001,
+          "min_lr": 0.0001,
+          "warmup_iters": 51,
+          "weight_decay": 0.1,
+          "beta1": 0.9,
+          "beta2": 0.95,
+          "grad_clip": 1.0,
+          "eval_interval": 256,
+          "eval_batches": 10,
+          "seed": 1337,
+          "device": "auto",
+          "precision": "float32",
+          "num_threads": 4,
+          "data_path": "data/input.txt",
+          "train_fraction": 0.9,
+          "out_dir": "runs/ablations/context_64/seed_1337"
+        }
+      },
+      "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07",
+      "environment": {
+        "platform": "macOS-26.7.2-arm64-arm-64bit",
+        "machine": "arm64",
+        "python": "3.11.18",
+        "torch": "2.15.0",
+        "numpy": "2.4.6",
+        "device": "mps",
+        "num_threads": 4
+      },
+      "data_sha256": "86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed",
+      "training_seconds": 27.466941667000356,
+      "history": [
+        {
+          "step": 0,
+          "train_loss": 4.238990449905396,
+          "val_loss": 4.243808650970459,
+          "lr": 1.9607843137254903e-05,
+          "tokens_per_second": 0.0,
+          "elapsed_seconds": 0.12633987500157673,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 256,
+          "train_loss": 2.299974274635315,
+          "val_loss": 2.3118809938430784,
+          "lr": 0.0009056767012834417,
+          "tokens_per_second": 45670.78839789813,
+          "elapsed_seconds": 6.097260249996907,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 512,
+          "train_loss": 2.0823585987091064,
+          "val_loss": 2.114102602005005,
+          "lr": 0.000587770975448608,
+          "tokens_per_second": 45156.39430642557,
+          "elapsed_seconds": 12.438368666997121,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 768,
+          "train_loss": 1.9194027185440063,
+          "val_loss": 2.018285000324249,
+          "lr": 0.0002454486405808321,
+          "tokens_per_second": 52217.58639022138,
+          "elapsed_seconds": 17.933969375000743,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 1024,
+          "train_loss": 1.8378369092941285,
+          "val_loss": 1.9603201866149902,
+          "lr": 0.0001,
+          "tokens_per_second": 29041.813558943402,
+          "elapsed_seconds": 27.466941667000356,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        }
+      ]
+    },
+    {
+      "variant": "context_64",
+      "seed": 2024,
+      "steps": 1024,
+      "training_tokens": 1048576,
+      "loss": 1.9420229729917022,
+      "perplexity": 6.972842584578326,
+      "bits_per_char": 2.80174691242757,
+      "config": {
+        "model": {
+          "vocab_size": 65,
+          "block_size": 64,
+          "n_layer": 6,
+          "n_head": 6,
+          "n_embd": 384,
+          "dropout": 0.2,
+          "bias": true,
+          "positional_embeddings": true,
+          "attention": "manual",
+          "mlp_ratio": 4,
+          "init_std": 0.02
+        },
+        "train": {
+          "batch_size": 16,
+          "max_iters": 1024,
+          "learning_rate": 0.001,
+          "min_lr": 0.0001,
+          "warmup_iters": 51,
+          "weight_decay": 0.1,
+          "beta1": 0.9,
+          "beta2": 0.95,
+          "grad_clip": 1.0,
+          "eval_interval": 256,
+          "eval_batches": 10,
+          "seed": 2024,
+          "device": "auto",
+          "precision": "float32",
+          "num_threads": 4,
+          "data_path": "data/input.txt",
+          "train_fraction": 0.9,
+          "out_dir": "runs/ablations/context_64/seed_2024"
+        }
+      },
+      "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07",
+      "environment": {
+        "platform": "macOS-26.7.2-arm64-arm-64bit",
+        "machine": "arm64",
+        "python": "3.11.18",
+        "torch": "2.15.0",
+        "numpy": "2.4.6",
+        "device": "mps",
+        "num_threads": 4
+      },
+      "data_sha256": "86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed",
+      "training_seconds": 24.6914658329988,
+      "history": [
+        {
+          "step": 0,
+          "train_loss": 4.2865309715271,
+          "val_loss": 4.27500205039978,
+          "lr": 1.9607843137254903e-05,
+          "tokens_per_second": 0.0,
+          "elapsed_seconds": 0.13221445799717912,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 256,
+          "train_loss": 2.245447611808777,
+          "val_loss": 2.2802324295043945,
+          "lr": 0.0009056767012834417,
+          "tokens_per_second": 46771.17195556287,
+          "elapsed_seconds": 5.97039550000045,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 512,
+          "train_loss": 2.026630675792694,
+          "val_loss": 2.073301339149475,
+          "lr": 0.000587770975448608,
+          "tokens_per_second": 44435.198163326444,
+          "elapsed_seconds": 12.313630374999775,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 768,
+          "train_loss": 1.8788679242134094,
+          "val_loss": 1.977016270160675,
+          "lr": 0.0002454486405808321,
+          "tokens_per_second": 44253.41148607274,
+          "elapsed_seconds": 18.68168812499789,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 1024,
+          "train_loss": 1.8140724658966065,
+          "val_loss": 1.9190539598464966,
+          "lr": 0.0001,
+          "tokens_per_second": 47137.61172849024,
+          "elapsed_seconds": 24.6914658329988,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        }
+      ]
+    },
+    {
+      "variant": "context_128",
+      "seed": 1337,
+      "steps": 512,
+      "training_tokens": 1048576,
+      "loss": 2.085604318740819,
+      "perplexity": 8.049454448335254,
+      "bits_per_char": 3.008891007903985,
+      "config": {
+        "model": {
+          "vocab_size": 65,
+          "block_size": 128,
+          "n_layer": 6,
+          "n_head": 6,
+          "n_embd": 384,
+          "dropout": 0.2,
+          "bias": true,
+          "positional_embeddings": true,
+          "attention": "manual",
+          "mlp_ratio": 4,
+          "init_std": 0.02
+        },
+        "train": {
+          "batch_size": 16,
+          "max_iters": 512,
+          "learning_rate": 0.001,
+          "min_lr": 0.0001,
+          "warmup_iters": 25,
+          "weight_decay": 0.1,
+          "beta1": 0.9,
+          "beta2": 0.95,
+          "grad_clip": 1.0,
+          "eval_interval": 128,
+          "eval_batches": 10,
+          "seed": 1337,
+          "device": "auto",
+          "precision": "float32",
+          "num_threads": 4,
+          "data_path": "data/input.txt",
+          "train_fraction": 0.9,
+          "out_dir": "runs/ablations/context_128/seed_1337"
+        }
+      },
+      "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07",
+      "environment": {
+        "platform": "macOS-26.7.2-arm64-arm-64bit",
+        "machine": "arm64",
+        "python": "3.11.18",
+        "torch": "2.15.0",
+        "numpy": "2.4.6",
+        "device": "mps",
+        "num_threads": 4
+      },
+      "data_sha256": "86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed",
+      "training_seconds": 22.99890791699727,
+      "history": [
+        {
+          "step": 0,
+          "train_loss": 4.246490335464477,
+          "val_loss": 4.249354076385498,
+          "lr": 4e-05,
+          "tokens_per_second": 0.0,
+          "elapsed_seconds": 0.22724891699908767,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 128,
+          "train_loss": 2.473846983909607,
+          "val_loss": 2.498858380317688,
+          "lr": 0.0009056767012834417,
+          "tokens_per_second": 49876.73190142079,
+          "elapsed_seconds": 5.79561458399985,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 256,
+          "train_loss": 2.3083493232727053,
+          "val_loss": 2.357656645774841,
+          "lr": 0.000587770975448608,
+          "tokens_per_second": 50037.01444739275,
+          "elapsed_seconds": 12.144936500000767,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 384,
+          "train_loss": 2.0893624305725096,
+          "val_loss": 2.173069214820862,
+          "lr": 0.0002454486405808321,
+          "tokens_per_second": 57565.25355954263,
+          "elapsed_seconds": 17.27380529200309,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 512,
+          "train_loss": 2.0115081787109377,
+          "val_loss": 2.10332248210907,
+          "lr": 0.0001,
+          "tokens_per_second": 50886.9751136316,
+          "elapsed_seconds": 22.99890791699727,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        }
+      ]
+    },
+    {
+      "variant": "context_128",
+      "seed": 2024,
+      "steps": 512,
+      "training_tokens": 1048576,
+      "loss": 2.0925106571544885,
+      "perplexity": 8.105239116968505,
+      "bits_per_char": 3.0188547480840864,
+      "config": {
+        "model": {
+          "vocab_size": 65,
+          "block_size": 128,
+          "n_layer": 6,
+          "n_head": 6,
+          "n_embd": 384,
+          "dropout": 0.2,
+          "bias": true,
+          "positional_embeddings": true,
+          "attention": "manual",
+          "mlp_ratio": 4,
+          "init_std": 0.02
+        },
+        "train": {
+          "batch_size": 16,
+          "max_iters": 512,
+          "learning_rate": 0.001,
+          "min_lr": 0.0001,
+          "warmup_iters": 25,
+          "weight_decay": 0.1,
+          "beta1": 0.9,
+          "beta2": 0.95,
+          "grad_clip": 1.0,
+          "eval_interval": 128,
+          "eval_batches": 10,
+          "seed": 2024,
+          "device": "auto",
+          "precision": "float32",
+          "num_threads": 4,
+          "data_path": "data/input.txt",
+          "train_fraction": 0.9,
+          "out_dir": "runs/ablations/context_128/seed_2024"
+        }
+      },
+      "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07",
+      "environment": {
+        "platform": "macOS-26.7.2-arm64-arm-64bit",
+        "machine": "arm64",
+        "python": "3.11.18",
+        "torch": "2.15.0",
+        "numpy": "2.4.6",
+        "device": "mps",
+        "num_threads": 4
+      },
+      "data_sha256": "86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed",
+      "training_seconds": 23.70905933299946,
+      "history": [
+        {
+          "step": 0,
+          "train_loss": 4.250635242462158,
+          "val_loss": 4.253525829315185,
+          "lr": 4e-05,
+          "tokens_per_second": 0.0,
+          "elapsed_seconds": 0.23202866700012237,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 128,
+          "train_loss": 2.461107873916626,
+          "val_loss": 2.476364016532898,
+          "lr": 0.0009056767012834417,
+          "tokens_per_second": 49110.83208072694,
+          "elapsed_seconds": 5.895581791999575,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 256,
+          "train_loss": 2.2911470890045167,
+          "val_loss": 2.3206675052642822,
+          "lr": 0.000587770975448608,
+          "tokens_per_second": 46600.972819607145,
+          "elapsed_seconds": 12.068208791999496,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 384,
+          "train_loss": 2.0723210096359255,
+          "val_loss": 2.1262386560440065,
+          "lr": 0.0002454486405808321,
+          "tokens_per_second": 49788.530810565884,
+          "elapsed_seconds": 17.889436999997997,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 512,
+          "train_loss": 1.9954455614089965,
+          "val_loss": 2.0704670429229735,
+          "lr": 0.0001,
+          "tokens_per_second": 53872.27114145676,
+          "elapsed_seconds": 23.70905933299946,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        }
+      ]
+    },
+    {
+      "variant": "positions_off",
+      "seed": 1337,
+      "steps": 256,
+      "training_tokens": 1048576,
+      "loss": 2.4375830581338493,
+      "perplexity": 11.445344553813383,
+      "bits_per_char": 3.5166889897246585,
+      "config": {
+        "model": {
+          "vocab_size": 65,
+          "block_size": 256,
+          "n_layer": 6,
+          "n_head": 6,
+          "n_embd": 384,
+          "dropout": 0.2,
+          "bias": true,
+          "positional_embeddings": false,
+          "attention": "manual",
+          "mlp_ratio": 4,
+          "init_std": 0.02
+        },
+        "train": {
+          "batch_size": 16,
+          "max_iters": 256,
+          "learning_rate": 0.001,
+          "min_lr": 0.0001,
+          "warmup_iters": 12,
+          "weight_decay": 0.1,
+          "beta1": 0.9,
+          "beta2": 0.95,
+          "grad_clip": 1.0,
+          "eval_interval": 64,
+          "eval_batches": 10,
+          "seed": 1337,
+          "device": "auto",
+          "precision": "float32",
+          "num_threads": 4,
+          "data_path": "data/input.txt",
+          "train_fraction": 0.9,
+          "out_dir": "runs/ablations/positions_off/seed_1337"
+        }
+      },
+      "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07",
+      "environment": {
+        "platform": "macOS-26.7.2-arm64-arm-64bit",
+        "machine": "arm64",
+        "python": "3.11.18",
+        "torch": "2.15.0",
+        "numpy": "2.4.6",
+        "device": "mps",
+        "num_threads": 4
+      },
+      "data_sha256": "86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed",
+      "training_seconds": 28.335870875002,
+      "history": [
+        {
+          "step": 0,
+          "train_loss": 4.350072526931763,
+          "val_loss": 4.344567728042603,
+          "lr": 8.333333333333333e-05,
+          "tokens_per_second": 0.0,
+          "elapsed_seconds": 0.4676112910019583,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 64,
+          "train_loss": 2.525295305252075,
+          "val_loss": 2.5469945907592773,
+          "lr": 0.0009056767012834417,
+          "tokens_per_second": 46723.29432122298,
+          "elapsed_seconds": 7.198573541005317,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 128,
+          "train_loss": 2.4765069007873537,
+          "val_loss": 2.511215829849243,
+          "lr": 0.000587770975448608,
+          "tokens_per_second": 53040.41298010177,
+          "elapsed_seconds": 13.42705808300525,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 192,
+          "train_loss": 2.4326795816421507,
+          "val_loss": 2.464221954345703,
+          "lr": 0.0002454486405808321,
+          "tokens_per_second": 52130.581793802485,
+          "elapsed_seconds": 19.32860262500617,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 256,
+          "train_loss": 2.413535785675049,
+          "val_loss": 2.457759881019592,
+          "lr": 0.0001,
+          "tokens_per_second": 35940.863347329265,
+          "elapsed_seconds": 28.335870875002,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        }
+      ]
+    },
+    {
+      "variant": "positions_off",
+      "seed": 2024,
+      "steps": 256,
+      "training_tokens": 1048576,
+      "loss": 2.4340096524490242,
+      "perplexity": 11.404518681664713,
+      "bits_per_char": 3.5115336550640768,
+      "config": {
+        "model": {
+          "vocab_size": 65,
+          "block_size": 256,
+          "n_layer": 6,
+          "n_head": 6,
+          "n_embd": 384,
+          "dropout": 0.2,
+          "bias": true,
+          "positional_embeddings": false,
+          "attention": "manual",
+          "mlp_ratio": 4,
+          "init_std": 0.02
+        },
+        "train": {
+          "batch_size": 16,
+          "max_iters": 256,
+          "learning_rate": 0.001,
+          "min_lr": 0.0001,
+          "warmup_iters": 12,
+          "weight_decay": 0.1,
+          "beta1": 0.9,
+          "beta2": 0.95,
+          "grad_clip": 1.0,
+          "eval_interval": 64,
+          "eval_batches": 10,
+          "seed": 2024,
+          "device": "auto",
+          "precision": "float32",
+          "num_threads": 4,
+          "data_path": "data/input.txt",
+          "train_fraction": 0.9,
+          "out_dir": "runs/ablations/positions_off/seed_2024"
+        }
+      },
+      "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07",
+      "environment": {
+        "platform": "macOS-26.7.2-arm64-arm-64bit",
+        "machine": "arm64",
+        "python": "3.11.18",
+        "torch": "2.15.0",
+        "numpy": "2.4.6",
+        "device": "mps",
+        "num_threads": 4
+      },
+      "data_sha256": "86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed",
+      "training_seconds": 30.04435637500137,
+      "history": [
+        {
+          "step": 0,
+          "train_loss": 4.326399946212769,
+          "val_loss": 4.3177238464355465,
+          "lr": 8.333333333333333e-05,
+          "tokens_per_second": 0.0,
+          "elapsed_seconds": 0.5950682500042603,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 64,
+          "train_loss": 2.512678551673889,
+          "val_loss": 2.588420295715332,
+          "lr": 0.0009056767012834417,
+          "tokens_per_second": 33988.046419239334,
+          "elapsed_seconds": 9.11467754199839,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 128,
+          "train_loss": 2.463797998428345,
+          "val_loss": 2.5259957313537598,
+          "lr": 0.000587770975448608,
+          "tokens_per_second": 38523.30750187312,
+          "elapsed_seconds": 16.735864916998253,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 192,
+          "train_loss": 2.4180830240249636,
+          "val_loss": 2.4651146650314333,
+          "lr": 0.0002454486405808321,
+          "tokens_per_second": 44437.164745707225,
+          "elapsed_seconds": 23.424899083001947,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        },
+        {
+          "step": 256,
+          "train_loss": 2.3955458402633667,
+          "val_loss": 2.4472121953964234,
+          "lr": 0.0001,
+          "tokens_per_second": 44948.38651279128,
+          "elapsed_seconds": 30.04435637500137,
+          "git_commit": "99bfc414eb5fde45401fa73301d01e6caceabe07"
+        }
+      ]
+    }
+  ],
+  "summary": [
+    {
+      "factor": "n_layer",
+      "value": "2",
+      "variant": "layers_2",
+      "seeds": 2,
+      "loss_mean": 2.4362154014567636,
+      "loss_std": 0.0008982137324813564,
+      "perplexity_mean": 11.429704256542447,
+      "perplexity_std": 0.010266315940971103,
+      "bits_per_char_mean": 3.514715878218988,
+      "bits_per_char_std": 0.0012958484975093601
+    },
+    {
+      "factor": "n_layer",
+      "value": "4",
+      "variant": "layers_4",
+      "seeds": 2,
+      "loss_mean": 2.425903200473706,
+      "loss_std": 0.0052300430546301565,
+      "perplexity_mean": 11.31251956803623,
+      "perplexity_std": 0.05916469467198457,
+      "bits_per_char_mean": 3.499838517000081,
+      "bits_per_char_std": 0.0075453571785505935
+    },
+    {
+      "factor": "n_layer",
+      "value": "6",
+      "variant": "baseline",
+      "seeds": 2,
+      "loss_mean": 2.427604280823606,
+      "loss_std": 0.0003896254356105569,
+      "perplexity_mean": 11.331702389408788,
+      "perplexity_std": 0.004415119367973413,
+      "bits_per_char_mean": 3.502292657185035,
+      "bits_per_char_std": 0.0005621106837596493
+    },
+    {
+      "factor": "block_size",
+      "value": "64",
+      "variant": "context_64",
+      "seeds": 2,
+      "loss_mean": 1.9358218146054067,
+      "loss_std": 0.008769762292322804,
+      "perplexity_mean": 6.929869914469782,
+      "perplexity_std": 0.06077253287888908,
+      "bits_per_char_mean": 2.7928005319758946,
+      "bits_per_char_std": 0.01265209256890888
+    },
+    {
+      "factor": "block_size",
+      "value": "128",
+      "variant": "context_128",
+      "seeds": 2,
+      "loss_mean": 2.089057487947654,
+      "loss_std": 0.004883518725474768,
+      "perplexity_mean": 8.07734678265188,
+      "perplexity_std": 0.03944571747681631,
+      "bits_per_char_mean": 3.013872877994036,
+      "bits_per_char_std": 0.007045428247330713
+    },
+    {
+      "factor": "block_size",
+      "value": "256",
+      "variant": "baseline",
+      "seeds": 2,
+      "loss_mean": 2.427604280823606,
+      "loss_std": 0.0003896254356105569,
+      "perplexity_mean": 11.331702389408788,
+      "perplexity_std": 0.004415119367973413,
+      "bits_per_char_mean": 3.502292657185035,
+      "bits_per_char_std": 0.0005621106837596493
+    },
+    {
+      "factor": "positional_embeddings",
+      "value": "on",
+      "variant": "baseline",
+      "seeds": 2,
+      "loss_mean": 2.427604280823606,
+      "loss_std": 0.0003896254356105569,
+      "perplexity_mean": 11.331702389408788,
+      "perplexity_std": 0.004415119367973413,
+      "bits_per_char_mean": 3.502292657185035,
+      "bits_per_char_std": 0.0005621106837596493
+    },
+    {
+      "factor": "positional_embeddings",
+      "value": "off",
+      "variant": "positions_off",
+      "seeds": 2,
+      "loss_mean": 2.435796355291437,
+      "loss_std": 0.0025267793916703978,
+      "perplexity_mean": 11.424931617739048,
+      "perplexity_std": 0.028868251044179293,
+      "bits_per_char_mean": 3.514111322394368,
+      "bits_per_char_std": 0.003645372097783377
+    }
+  ],
+  "protocol": "last checkpoint, full validation, sample std (ddof=1), equal tokens"
+}

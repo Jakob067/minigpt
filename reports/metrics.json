@@ -1,0 +1,259 @@
+{
+  "checkpoint": "runs/small/best.pt",
+  "checkpoint_step": 5000,
+  "config": {
+    "model": {
+      "vocab_size": 65,
+      "block_size": 256,
+      "n_layer": 6,
+      "n_head": 6,
+      "n_embd": 384,
+      "dropout": 0.2,
+      "bias": true,
+      "positional_embeddings": true,
+      "attention": "manual",
+      "mlp_ratio": 4,
+      "init_std": 0.02
+    },
+    "train": {
+      "batch_size": 16,
+      "max_iters": 5000,
+      "learning_rate": 0.001,
+      "min_lr": 0.0001,
+      "warmup_iters": 100,
+      "weight_decay": 0.1,
+      "beta1": 0.9,
+      "beta2": 0.95,
+      "grad_clip": 1.0,
+      "eval_interval": 250,
+      "eval_batches": 20,
+      "seed": 1337,
+      "device": "auto",
+      "precision": "float32",
+      "num_threads": 4,
+      "data_path": "data/input.txt",
+      "train_fraction": 0.9,
+      "out_dir": "runs/small"
+    }
+  },
+  "training_git_commit": "58afd6dbeaa107fbd09112b473808fe57e506d46",
+  "evaluation_git_commit": "b620f83d42c76aab6563cea3a72b5c7e2a4ad720",
+  "environment": {
+    "platform": "macOS-26.7.2-arm64-arm-64bit",
+    "machine": "arm64",
+    "python": "3.11.18",
+    "torch": "2.15.0",
+    "numpy": "2.4.6",
+    "device": "cpu",
+    "num_threads": 4
+  },
+  "data_sha256": "86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed",
+  "validation_targets": 111539,
+  "protocol": "all validation targets once, context reset each block_size inputs",
+  "model": {
+    "loss": 1.4530824752861107,
+    "perplexity": 4.2762757344491575,
+    "bits_per_char": 2.0963548810979318
+  },
+  "uniform": {
+    "loss": 4.174387269895637,
+    "perplexity": 64.99999999999999,
+    "bits_per_char": 6.022367813028454
+  },
+  "bigram": {
+    "loss": 2.4818894321158234,
+    "perplexity": 11.963847954655076,
+    "bits_per_char": 3.580609575748224
+  },
+  "history": [
+    {
+      "step": 0,
+      "train_loss": 4.272382092475891,
+      "val_loss": 4.266476106643677,
+      "lr": 1e-05,
+      "tokens_per_second": 0.0,
+      "elapsed_seconds": 1.4848084170007496,
+      "git_commit": "58afd6dbeaa107fbd09112b473808fe57e506d46"
+    },
+    {
+      "step": 250,
+      "train_loss": 2.4069198250770567,
+      "val_loss": 2.436914622783661,
+      "lr": 0.0009979473756303776,
+      "tokens_per_second": 46847.58312677353,
+      "elapsed_seconds": 25.194759833997523,
+      "git_commit": "58afd6dbeaa107fbd09112b473808fe57e506d46"
+    },
+    {
+      "step": 500,
+      "train_loss": 1.9658801138401032,
+      "val_loss": 2.0875654458999633,
+      "lr": 0.0009853498352916468,
+      "tokens_per_second": 47587.15577123097,
+      "elapsed_seconds": 47.976331584002764,
+      "git_commit": "58afd6dbeaa107fbd09112b473808fe57e506d46"
+    },
+    {
+      "step": 750,
+      "train_loss": 1.742833787202835,
+      "val_loss": 1.8928033888339997,
+      "lr": 0.0009615869309281224,
+      "tokens_per_second": 46432.62379728403,
+      "elapsed_seconds": 72.14017570899887,
+      "git_commit": "58afd6dbeaa107fbd09112b473808fe57e506d46"
+    },
+    {
+      "step": 1000,
+      "train_loss": 1.6079117715358735,
+      "val_loss": 1.7894832611083984,
+      "lr": 0.0009272681068441242,
+      "tokens_per_second": 45743.99761497063,
+      "elapsed_seconds": 95.77161154199712,
+      "git_commit": "58afd6dbeaa107fbd09112b473808fe57e506d46"
+    },
+    {
+      "step": 1250,
+      "train_loss": 1.5161570370197297,
+      "val_loss": 1.6952267408370971,
+      "lr": 0.000883273533727081,
+      "tokens_per_second": 47397.28282116863,
+      "elapsed_seconds": 118.6258388339993,
+      "git_commit": "58afd6dbeaa107fbd09112b473808fe57e506d46"
+    },
+    {
+      "step": 1500,
+      "train_loss": 1.4618053257465362,
+      "val_loss": 1.6560983180999755,
+      "lr": 0.0008307315350174696,
+      "tokens_per_second": 47128.05477181253,
+      "elapsed_seconds": 141.6053013339988,
+      "git_commit": "58afd6dbeaa107fbd09112b473808fe57e506d46"
+    },
+    {
+      "step": 1750,
+      "train_loss": 1.4027439773082733,
+      "val_loss": 1.609787380695343,
+      "lr": 0.0007709896489354202,
+      "tokens_per_second": 47953.319878230905,
+      "elapsed_seconds": 164.27754120899772,
+      "git_commit": "58afd6dbeaa107fbd09112b473808fe57e506d46"
+    },
+    {
+      "step": 2000,
+      "train_loss": 1.3627746164798737,
+      "val_loss": 1.5768014729022979,
+      "lr": 0.000705580068332659,
+      "tokens_per_second": 47484.28284774995,
+      "elapsed_seconds": 187.7625377919976,
+      "git_commit": "58afd6dbeaa107fbd09112b473808fe57e506d46"
+    },
+    {
+      "step": 2250,
+      "train_loss": 1.3339357554912568,
+      "val_loss": 1.541999614238739,
+      "lr": 0.0006361803447296765,
+      "tokens_per_second": 49418.296717782425,
+      "elapsed_seconds": 210.7065244589976,
+      "git_commit": "58afd6dbeaa107fbd09112b473808fe57e506d46"
+    },
+    {
+      "step": 2500,
+      "train_loss": 1.2971637487411498,
+      "val_loss": 1.5200463891029359,
+      "lr": 0.000564570364356884,
+      "tokens_per_second": 47399.08779004155,
+      "elapsed_seconds": 233.55745254200156,
+      "git_commit": "58afd6dbeaa107fbd09112b473808fe57e506d46"
+    },
+    {
+      "step": 2750,
+      "train_loss": 1.2683274507522584,
+      "val_loss": 1.5051281988620757,
+      "lr": 0.0004925866996299686,
+      "tokens_per_second": 47119.96796762502,
+      "elapsed_seconds": 256.94797112500237,
+      "git_commit": "58afd6dbeaa107fbd09112b473808fe57e506d46"
+    },
+    {
+      "step": 3000,
+      "train_loss": 1.2451564371585846,
+      "val_loss": 1.4894402921199799,
+      "lr": 0.00042207550680158215,
+      "tokens_per_second": 47099.76616350383,
+      "elapsed_seconds": 279.96371754199936,
+      "git_commit": "58afd6dbeaa107fbd09112b473808fe57e506d46"
+    },
+    {
+      "step": 3250,
+      "train_loss": 1.2189433038234712,
+      "val_loss": 1.4860316455364226,
+      "lr": 0.0003548451778175354,
+      "tokens_per_second": 47703.94929071173,
+      "elapsed_seconds": 302.68502837500273,
+      "git_commit": "58afd6dbeaa107fbd09112b473808fe57e506d46"
+    },
+    {
+      "step": 3500,
+      "train_loss": 1.2010071396827697,
+      "val_loss": 1.4680578112602234,
+      "lr": 0.00029261996070955356,
+      "tokens_per_second": 46972.327491839016,
+      "elapsed_seconds": 325.7908231670008,
+      "git_commit": "58afd6dbeaa107fbd09112b473808fe57e506d46"
+    },
+    {
+      "step": 3750,
+      "train_loss": 1.1822021722793579,
+      "val_loss": 1.4678630173206328,
+      "lr": 0.00023699573801671463,
+      "tokens_per_second": 48088.21774151154,
+      "elapsed_seconds": 351.7796007090001,
+      "git_commit": "58afd6dbeaa107fbd09112b473808fe57e506d46"
+    },
+    {
+      "step": 4000,
+      "train_loss": 1.1667609632015228,
+      "val_loss": 1.4583731472492218,
+      "lr": 0.00018939909738099105,
+      "tokens_per_second": 44349.83691228193,
+      "elapsed_seconds": 376.6949725000013,
+      "git_commit": "58afd6dbeaa107fbd09112b473808fe57e506d46"
+    },
+    {
+      "step": 4250,
+      "train_loss": 1.1529833793640136,
+      "val_loss": 1.4537561416625977,
+      "lr": 0.00015105074402832827,
+      "tokens_per_second": 47288.04795861209,
+      "elapsed_seconds": 399.931918084003,
+      "git_commit": "58afd6dbeaa107fbd09112b473808fe57e506d46"
+    },
+    {
+      "step": 4500,
+      "train_loss": 1.1404169261455537,
+      "val_loss": 1.4495083093643188,
+      "lr": 0.00012293419349088954,
+      "tokens_per_second": 43466.50476166978,
+      "elapsed_seconds": 424.98955395899975,
+      "git_commit": "58afd6dbeaa107fbd09112b473808fe57e506d46"
+    },
+    {
+      "step": 4750,
+      "train_loss": 1.129924476146698,
+      "val_loss": 1.4474059760570526,
+      "lr": 0.00010577054750438951,
+      "tokens_per_second": 34176.179582478384,
+      "elapsed_seconds": 457.02443137500086,
+      "git_commit": "58afd6dbeaa107fbd09112b473808fe57e506d46"
+    },
+    {
+      "step": 5000,
+      "train_loss": 1.122694879770279,
+      "val_loss": 1.4445929110050202,
+      "lr": 0.0001,
+      "tokens_per_second": 37229.594563667815,
+      "elapsed_seconds": 487.3474912919992,
+      "git_commit": "58afd6dbeaa107fbd09112b473808fe57e506d46"
+    }
+  ]
+}

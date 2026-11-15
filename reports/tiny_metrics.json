@@ -1,0 +1,115 @@
+{
+  "checkpoint": "runs/tiny/best.pt",
+  "checkpoint_step": 200,
+  "config": {
+    "model": {
+      "vocab_size": 65,
+      "block_size": 64,
+      "n_layer": 2,
+      "n_head": 4,
+      "n_embd": 64,
+      "dropout": 0.0,
+      "bias": true,
+      "positional_embeddings": true,
+      "attention": "manual",
+      "mlp_ratio": 4,
+      "init_std": 0.02
+    },
+    "train": {
+      "batch_size": 32,
+      "max_iters": 200,
+      "learning_rate": 0.003,
+      "min_lr": 0.0003,
+      "warmup_iters": 20,
+      "weight_decay": 0.1,
+      "beta1": 0.9,
+      "beta2": 0.95,
+      "grad_clip": 1.0,
+      "eval_interval": 50,
+      "eval_batches": 10,
+      "seed": 1337,
+      "device": "auto",
+      "precision": "float32",
+      "num_threads": 4,
+      "data_path": "data/input.txt",
+      "train_fraction": 0.9,
+      "out_dir": "runs/tiny"
+    }
+  },
+  "training_git_commit": "86b1a5299b957a8c7f99bf32c61df33f2756ac11",
+  "evaluation_git_commit": "b620f83d42c76aab6563cea3a72b5c7e2a4ad720",
+  "environment": {
+    "platform": "macOS-26.7.2-arm64-arm-64bit",
+    "machine": "arm64",
+    "python": "3.11.18",
+    "torch": "2.15.0",
+    "numpy": "2.4.6",
+    "device": "cpu",
+    "num_threads": 4
+  },
+  "data_sha256": "86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed",
+  "validation_targets": 111539,
+  "protocol": "all validation targets once, context reset each block_size inputs",
+  "model": {
+    "loss": 2.4450680792039385,
+    "perplexity": 11.531334616197888,
+    "bits_per_char": 3.5274875925034253
+  },
+  "uniform": {
+    "loss": 4.174387269895637,
+    "perplexity": 64.99999999999999,
+    "bits_per_char": 6.022367813028454
+  },
+  "bigram": {
+    "loss": 2.4818894321158234,
+    "perplexity": 11.963847954655076,
+    "bits_per_char": 3.580609575748224
+  },
+  "history": [
+    {
+      "step": 0,
+      "train_loss": 4.179146385192871,
+      "val_loss": 4.1752794742584225,
+      "lr": 0.00015000000000000001,
+      "tokens_per_second": 0.0,
+      "elapsed_seconds": 0.1174955000024056,
+      "git_commit": "86b1a5299b957a8c7f99bf32c61df33f2756ac11"
+    },
+    {
+      "step": 50,
+      "train_loss": 2.703850269317627,
+      "val_loss": 2.701350688934326,
+      "lr": 0.0028288812238714683,
+      "tokens_per_second": 522951.920592879,
+      "elapsed_seconds": 0.35024287499982165,
+      "git_commit": "86b1a5299b957a8c7f99bf32c61df33f2756ac11"
+    },
+    {
+      "step": 100,
+      "train_loss": 2.524504065513611,
+      "val_loss": 2.541576051712036,
+      "lr": 0.0018973768116883857,
+      "tokens_per_second": 191899.46267296118,
+      "elapsed_seconds": 0.9536031250027008,
+      "git_commit": "86b1a5299b957a8c7f99bf32c61df33f2756ac11"
+    },
+    {
+      "step": 150,
+      "train_loss": 2.471765661239624,
+      "val_loss": 2.4808841943740845,
+      "lr": 0.0007872887782633523,
+      "tokens_per_second": 556665.9488957071,
+      "elapsed_seconds": 1.2697934999960125,
+      "git_commit": "86b1a5299b957a8c7f99bf32c61df33f2756ac11"
+    },
+    {
+      "step": 200,
+      "train_loss": 2.4520586729049683,
+      "val_loss": 2.4580537557601927,
+      "lr": 0.0003,
+      "tokens_per_second": 623701.5746653711,
+      "elapsed_seconds": 1.4881881670007715,
+      "git_commit": "86b1a5299b957a8c7f99bf32c61df33f2756ac11"
+    }
+  ]
+}
