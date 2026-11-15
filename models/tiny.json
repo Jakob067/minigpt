@@ -1,0 +1,45 @@
+{
+  "file": "models/tiny.pt",
+  "sha256": "adaa020831bcdf089484de99a108e0d213169c7c2b548dfe3e846436bcd2ef66",
+  "bytes": 1348910,
+  "config": {
+    "model": {
+      "vocab_size": 65,
+      "block_size": 64,
+      "n_layer": 2,
+      "n_head": 4,
+      "n_embd": 64,
+      "dropout": 0.0,
+      "bias": true,
+      "positional_embeddings": true,
+      "attention": "manual",
+      "mlp_ratio": 4,
+      "init_std": 0.02
+    },
+    "train": {
+      "batch_size": 32,
+      "max_iters": 200,
+      "learning_rate": 0.003,
+      "min_lr": 0.0003,
+      "warmup_iters": 20,
+      "weight_decay": 0.1,
+      "beta1": 0.9,
+      "beta2": 0.95,
+      "grad_clip": 1.0,
+      "eval_interval": 50,
+      "eval_batches": 10,
+      "seed": 1337,
+      "device": "auto",
+      "precision": "float32",
+      "num_threads": 4,
+      "data_path": "data/input.txt",
+      "train_fraction": 0.9,
+      "out_dir": "runs/tiny"
+    }
+  },
+  "git_commit": "86b1a5299b957a8c7f99bf32c61df33f2756ac11",
+  "step": 200,
+  "data_sha256": "86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed",
+  "command": ".venv/bin/minigpt-train --config configs/tiny.yaml",
+  "note": "Full tiny checkpoint with optimizer/RNG state; PyTorch pickle, trusted local use only."
+}
