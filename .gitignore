@@ -17,3 +17,4 @@ dist/
 node_modules/
 target/
 reports/tmp/
+!models/tiny.pt

@@ -1,0 +1,124 @@
+{
+  "checkpoint": "runs/small/best.pt",
+  "step": 5000,
+  "config": {
+    "model": {
+      "vocab_size": 65,
+      "block_size": 256,
+      "n_layer": 6,
+      "n_head": 6,
+      "n_embd": 384,
+      "dropout": 0.2,
+      "bias": true,
+      "positional_embeddings": true,
+      "attention": "manual",
+      "mlp_ratio": 4,
+      "init_std": 0.02
+    },
+    "train": {
+      "batch_size": 16,
+      "max_iters": 5000,
+      "learning_rate": 0.001,
+      "min_lr": 0.0001,
+      "warmup_iters": 100,
+      "weight_decay": 0.1,
+      "beta1": 0.9,
+      "beta2": 0.95,
+      "grad_clip": 1.0,
+      "eval_interval": 250,
+      "eval_batches": 20,
+      "seed": 1337,
+      "device": "auto",
+      "precision": "float32",
+      "num_threads": 4,
+      "data_path": "data/input.txt",
+      "train_fraction": 0.9,
+      "out_dir": "runs/small"
+    }
+  },
+  "training_git_commit": "58afd6dbeaa107fbd09112b473808fe57e506d46",
+  "generation_git_commit": "b620f83d42c76aab6563cea3a72b5c7e2a4ad720",
+  "environment": {
+    "platform": "macOS-26.7.2-arm64-arm-64bit",
+    "machine": "arm64",
+    "python": "3.11.18",
+    "torch": "2.15.0",
+    "numpy": "2.4.6",
+    "device": "cpu",
+    "num_threads": 4
+  },
+  "samples": [
+    {
+      "prompt": "ROMEO:\n",
+      "temperature": 0.5,
+      "top_k": null,
+      "top_p": 1.0,
+      "seed": 1337,
+      "max_new_tokens": 160,
+      "text": "ROMEO:\nThe matter dead and the lineaments of him.\n\nPOLIXENES:\nI have seen to hear thee, my lord,\nI would not yield the season and do the great morning soul:\nThe nobili"
+    },
+    {
+      "prompt": "ROMEO:\n",
+      "temperature": 0.8,
+      "top_k": null,
+      "top_p": 1.0,
+      "seed": 1337,
+      "max_new_tokens": 160,
+      "text": "ROMEO:\nCan take come.\n\nESCALUS:\nGood earning for a spirit.\n\nFirst Gentleman:\nI am in height of your highness' heart.\n\nCORIOLANUS:\nBut to give me down.\n\nAEdile:\nAnd if "
+    },
+    {
+      "prompt": "ROMEO:\n",
+      "temperature": 1.2,
+      "top_k": null,
+      "top_p": 1.0,
+      "seed": 1337,
+      "max_new_tokens": 160,
+      "text": "ROMEO:\nCanst thou denia? To laze undeed a jealous gentleman bitter, with\nthis base, seeing to flatterpose, coyful. The soldier feasts, of\nthe news, I am power to paint"
+    },
+    {
+      "prompt": "First Citizen:\n",
+      "temperature": 0.5,
+      "top_k": null,
+      "top_p": 1.0,
+      "seed": 1337,
+      "max_new_tokens": 160,
+      "text": "First Citizen:\nWe shall come to your royal service,\nThat you have done to come to the cause.\n\nCORIOLANUS:\nYou shall be the service of the company.\n\nCORIOLANUS:\nI have a nobili"
+    },
+    {
+      "prompt": "First Citizen:\n",
+      "temperature": 0.8,
+      "top_k": null,
+      "top_p": 1.0,
+      "seed": 1337,
+      "max_new_tokens": 160,
+      "text": "First Citizen:\nCan take come.\n\nESCALUS:\nGood ears and spoke of your birth, that the air of good\nman to your hands, thy mouths, some slain, as there\nconsuls as you will proceed"
+    },
+    {
+      "prompt": "First Citizen:\n",
+      "temperature": 1.2,
+      "top_k": null,
+      "top_p": 1.0,
+      "seed": 1337,
+      "max_new_tokens": 160,
+      "text": "First Citizen:\nCanst telcome.\n\nESCALUS:\nGood ears anon! women, the hair o'c with this:\na gone himself, you go; that my mouths, sometime\nPass'd of the queen angry of his nobili"
+    },
+    {
+      "prompt": "JULIET:\n",
+      "temperature": 0.8,
+      "top_k": 20,
+      "top_p": 1.0,
+      "seed": 1337,
+      "max_new_tokens": 160,
+      "text": "JULIET:\nCanst thou deny that lack up the mind;\nThough thy father bid my steel, be gone\nTo see thy harm; that my mouths, sometime\nPass'd of the news, I am power to paint"
+    },
+    {
+      "prompt": "JULIET:\n",
+      "temperature": 0.8,
+      "top_k": null,
+      "top_p": 0.9,
+      "seed": 1337,
+      "max_new_tokens": 160,
+      "text": "JULIET:\nThe land cannot come to look to the bone.\n\nROMEO:\nAy, it is this true, makes me set on.\n\nROMEO:\nThat must I be a good late, and that I say\nAs with me from my fa"
+    }
+  ]
+}
