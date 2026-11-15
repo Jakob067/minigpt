@@ -31,7 +31,10 @@ def benchmark(config: Config, warmup: int = 5, steps: int = 20) -> dict[str, Any
     torch.set_num_threads(config.train.num_threads)
     seed_everything(config.train.seed)
     device = select_device(config.train.device)
-    corpus = load_corpus(download_shakespeare(config.train.data_path), config.train.train_fraction)
+    path = Path(config.train.data_path)
+    if not path.exists() and path == Path("data/input.txt"):
+        download_shakespeare(path)
+    corpus = load_corpus(path, config.train.train_fraction)
     model = GPT(config.model).to(device).train()
     optimizer = make_optimizer(model, config.train)
     generator = torch.Generator().manual_seed(config.train.seed)

@@ -67,3 +67,15 @@ def test_seed_and_device() -> None:
     assert torch.equal(values[2], torch.rand(2))
     assert select_device("cpu").type == "cpu"
     assert select_device().type in {"cpu", "mps", "cuda"}
+
+
+def test_download_checks_fingerprint(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    import io
+
+    from minigpt.data import download_shakespeare
+
+    monkeypatch.setattr("urllib.request.urlopen", lambda *args, **kwargs: io.BytesIO(b"wrong data"))
+    path = tmp_path / "input.txt"
+    with pytest.raises(ValueError, match="checksum"):
+        download_shakespeare(path)
+    assert not path.exists()

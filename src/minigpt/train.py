@@ -6,6 +6,8 @@ import json
 import logging
 import math
 import random
+import shutil
+import sys
 import time
 from contextlib import AbstractContextManager, nullcontext
 from dataclasses import replace
@@ -187,7 +189,7 @@ def run_training(
         "environment": environment(device),
         "data_sha256": corpus.sha256,
         "parameters": count_parameters(model),
-        "command": __import__("sys").argv,
+        "command": sys.argv,
     }
     if resume:
         checkpoint = load_checkpoint(resume)
@@ -213,6 +215,19 @@ def run_training(
     if end_step <= step:
         raise ValueError("stop_after/max_iters must exceed the checkpoint step")
     out_dir.mkdir(parents=True, exist_ok=True)
+    if resume and out_dir.resolve() != Path(resume).resolve().parent:
+        if (out_dir / "last.pt").exists():
+            raise FileExistsError("resume destination already contains another run")
+        source_best = Path(resume).parent / "best.pt"
+        if not source_best.exists():
+            raise ValueError("resuming into a new directory requires the original best.pt sibling")
+        best_checkpoint = load_checkpoint(source_best)
+        if (
+            best_checkpoint["data_sha256"] != corpus.sha256
+            or best_checkpoint["best_loss"] != best_loss
+        ):
+            raise ValueError("best.pt sibling does not match the resumed run")
+        shutil.copyfile(source_best, out_dir / "best.pt")
     save_config(config, out_dir / "config.yaml")
     corpus.tokenizer.save(out_dir / "vocab.json")
     synchronize(device)

@@ -78,3 +78,18 @@ def test_baselines() -> None:
     assert bigram_loss(train, val, 2) < 0.02
     assert loss_metrics(math.log(4))["perplexity"] == 4
     assert loss_metrics(math.log(4))["bits_per_char"] == 2
+
+
+def test_resume_new_directory_preserves_best(tmp_path: Path) -> None:
+    original = training_config(tmp_path, "original")
+    run_training(original, stop_after=4)
+    continued = Config(original.model, replace(original.train, out_dir=str(tmp_path / "continued")))
+    run_training(continued, resume=tmp_path / "original/last.pt")
+    assert (tmp_path / "continued/best.pt").exists()
+    assert load_checkpoint(tmp_path / "continued/last.pt")["step"] == 8
+    fresh = training_config(tmp_path, "reference")
+    run_training(fresh)
+    resumed = load_checkpoint(tmp_path / "continued/last.pt")
+    reference = load_checkpoint(tmp_path / "reference/last.pt")
+    for name in resumed["model"]:
+        torch.testing.assert_close(resumed["model"][name], reference["model"][name], atol=0, rtol=0)
