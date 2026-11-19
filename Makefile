@@ -2,7 +2,7 @@ PYTHON ?= $(shell command -v python3.11 2>/dev/null || command -v python3)
 VENV := .venv
 BIN := $(VENV)/bin
 
-.PHONY: install lint test train-tiny train-small generate ablate
+.PHONY: install lint test train-tiny train-small generate gui ablate
 install:
 	$(PYTHON) -m venv $(VENV)
 	$(BIN)/python -m pip install -c requirements.lock -e '.[dev]'
@@ -17,5 +17,7 @@ train-small:
 	$(BIN)/minigpt-train --config configs/small.yaml
 generate:
 	$(BIN)/minigpt-generate --checkpoint runs/tiny/best.pt --prompt 'ROMEO:'
+gui:
+	$(BIN)/python -m minigpt.gui
 ablate:
 	$(BIN)/minigpt-ablate --config configs/ablation.yaml

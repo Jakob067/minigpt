@@ -33,6 +33,14 @@ make generate
 .venv/bin/minigpt-generate --checkpoint models/tiny.pt --prompt 'ROMEO:'
 ```
 
+### Desktop GUI
+
+Run `make gui` from the repository root after `make install`. The GUI uses
+Tkinter, which needs to be available in your Python installation. It opens with
+the bundled Tiny checkpoint selected. Enter a prompt, adjust the sampling
+settings, and click **Generate**. Use the checkpoint picker to switch to an
+existing training run or open another trusted local `.pt` file.
+
 The included Tiny checkpoint is a small smoke-run model, not the Small model
 behind the samples below. Existing run directories are protected from accidental
 replacement. To rerun, use a new output directory:

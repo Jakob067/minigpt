@@ -3,6 +3,7 @@
 import argparse
 import logging
 import math
+from collections.abc import Callable
 from pathlib import Path
 
 import torch
@@ -44,12 +45,15 @@ def generate(
     top_k: int | None = None,
     top_p: float = 1.0,
     seed: int = 1337,
+    *,
+    stop_requested: Callable[[], bool] | None = None,
 ) -> Tensor:
     """Append sampled tokens using cropped context and a dedicated CPU sampler RNG.
 
     Temperature zero is greedy; top_k=1 follows the same argmax path even on ties.
     Probabilities are copied to CPU for a seeded sampler supported on every device.
     Learned position indices restart at zero when cropping, as in nanoGPT.
+    If stop_requested returns true, return the sequence sampled so far.
     """
     if max_new_tokens < 0 or not math.isfinite(temperature) or temperature < 0:
         raise ValueError("max_new_tokens and finite temperature must be nonnegative")
@@ -61,6 +65,8 @@ def generate(
     model.eval()
     try:
         for _ in range(max_new_tokens):
+            if stop_requested is not None and stop_requested():
+                break
             logits = model(idx[:, -model.config.block_size :])[0][:, -1, :]
             if temperature == 0 or top_k == 1:
                 token = torch.argmax(logits, dim=-1, keepdim=True)
